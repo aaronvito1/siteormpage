@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- <div class="about-me-header">
+      <h2>About Me</h2>
+</div> -->
+
+{% block title %}
+    About Me
+{% endblock title %}
+
+{% block content %}
+        <div class="container aboutme-containert">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <img class="aboutmepic img-fluid"src="/static/imgs/about_me.jpg" alt="AboutMePic">
+                </div>
+                <div class="col-4">
+                    <p class="AboutInfo">Hi! I'm Aaron! Welcome to my very first website that I was able to create with Kickstart Coding! I am a recent graduate of California State University, Long Beach with a Bachelor's in Asian-American Studies. I love to learn and keep growing mentally, physically, and artistically. <br>
+                    During the current COVID pandemic, I was able to focus on learning different computer languages. This website was created using frontend languages such as HTML, CSS, Python and as well as Bootstrap!
+                    Some other hobbies I currently do consists of dancing, running and lifting weights!</p>
+                    <button class="home-button" type="button" href="./portfolio">Portfolio</button>
+                </div>
+            </div>
+        </div>
+{% endblock content %}

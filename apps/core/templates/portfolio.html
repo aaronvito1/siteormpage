@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container portfolio-header">
+ <!-- Header Start -->
+      <h2>Portfolio</h2>
+      <h3>Here are some projects I have been working on</h3>
+    <!-- Header End -->
+
+    <!-- Main Body Start -->
+
+        <div class="card-deck extra-deck container-fluid">
+          <div class="row">
+            <!-- Card 1 -->
+            <div class="card">
+              <img class="card-img-top" src="/static/imgs/bakeshack_home.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><strong>Bakeshack</strong></h5>
+                <p class="card-text">Currently Building using Webflow's CMS.</p>
+                <a class="link-primary" href="https://preview.webflow.com/preview/bakeshack-project?utm_medium=preview_link&utm_source=designer&utm_content=bakeshack-project&preview=9573168b7d9cc3fe0f5daeb713215ade&mode=preview">View Page</a>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+              <img class="card-img-top" src="/static/imgs/lashes_web.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><strong>Lashes by Angelica</strong></h5>
+                <p class="card-text">Utilizing the powerful Webflow CMS to build a website for a small, eyelash business. The website features multiple cards of pictures, the owners policies, as well as aftercare, and a future gallery section to showcase the owner's work. Website launch is up to owners descision!</p>
+                <a class="link-primary" href="https://preview.webflow.com/preview/lashes-by-angelica?utm_medium=preview_link&utm_source=dashboard&utm_content=lashes-by-angelica&preview=f1d7ff35ce202c2bba74429515ffcad2&mode=preview">View Page</a>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <a href="https://github.com/aaronvito1">
+            {% for repo in github_repos %}
+            <div class="card shadow">
+              <div class="card-header">
+                <a href="{{ repo.html_url }}"> {{ repo.name }} </h6>
+              </div>
+              <div class="card-body"> 
+                   {{ repo.name }} 
+              </div>
+            </div>
+            {% endfor %}
+
+            </div>
+        </div>
+</div>
+{% endblock content %}

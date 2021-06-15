@@ -1,107 +1,82 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>
-        {% block title %}
-            My Site
-        {% endblock title %}
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Google Font to be used for header text -->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+        <!-- Google Font for the rest of the text -->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <!-- Bootstrap Call Link -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <!-- Bootstrap Icon Call Link  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        <!-- CSS stylesheet page call -->
+        <link href="/static/styles.css" type="text/css" rel="stylesheet">
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+    </head>
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
+    <body id="page-top">
 
-    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navbar-nav" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="apps/core/templates/index.html">Aaron Vito</a>
 
-    <link href="{% static 'css/signinform.css' %}" rel="stylesheet">
-
-    <!-- Add your custom CSS to this file -->
-    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
-
-  </head>
-
-<body>
-
-<nav class="navbar navbar-expand-md">
-    <div class="container">
-        <a class="navbar-brand" href="/">
-            <!-- Add your logo here!  <img src="" /> -->
-            My Site
-        </a>
-
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">
-                ☰
-            </span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">Start</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'view_all_users' %}">Users</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                {% if request.user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}" >Sign Out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'view_profile' request.user %}" >
-                            {{ request.user }}
-                            <img src="{{ user.gravatar }}" class="navbar-avatar" />
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a id="log-in-link" class="nav-link" href="{% url 'login' %}">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="log-in-link" class="nav-link" href="{% url 'signup' %}">Sign up</a>
+<!--             {% for page in pages %}
+                {% if page.output_filename != "./index.html" and page.output_filename != "./portfolio.html" and page.output_filename != "./extra.html" %}
+                    <a class="nav-item nav-link" href="{{ page.output_filename }}">{{ page.title | title }}</a>
+                {% endif %}
+                {% if page.output_filename == "./portfolio.html" %} 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="./portfolio.html">Projects</a>
+                          <a class="dropdown-item" href="./extra.html">Dance Reel</a>
+                        </div>
                     </li>
                 {% endif %}
-            </ul>
+            {% endfor %} -->
+            <a class='nav-item nav-link' href='{% url "home" %}'>Home</a>
+            <a class='nav-item nav-link' href='{% url "about" %}'>About</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Projects
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href='{% url "portfolio" %}'>Portfolio</a>
+                  <a class="dropdown-item" href='{% url "extra" %}'>Dance Reel</a>
+                </div>
+              </li>
+            <a class='nav-item nav-link' href='{% url "blog" %}'>Blog</a>
+            <a class='nav-item nav-link' href='{% url "contact" %}'>Contact</a>
 
-        </div>
+      </div>
     </nav>
-</div>
 
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
 
+        <footer>
+            (C) 2021 Aaron Vito (amvito.com)
+        </footer>
 
-{% block main %}
-    <div class="container pt-2">
-
-      {# Enable Django's "messages" system #}
-      {% if messages %}
-          {% for message in messages %}
-              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
-          {% endfor %}
-      {% endif %}
-
-      {% block content %}
-        <p>Use this as a way to quick start any new project.</p>
-      {% endblock content %}
-
-    </div>
-{% endblock main %}
-
-
-      <script src="{% static 'js/bootstrap/jquery-3.4.1.min.js' %}"></script>
-      <script src="{% static 'js/bootstrap/bootstrap.js' %}"></script>
   </body>
+
 </html>
 
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

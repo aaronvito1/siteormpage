@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+ <!-- Header Start -->
+    <div class="blog-header">
+      <h2>Blog</h2>
+      <h3>I share my thoughts on technology here, with some posts being non-tech related!</h3>
+    </div>
+    <!-- Header End -->
+
+
+<div class="container">
+
+    {% for blog_post in posts %}
+        <a href="/post/{{ blog_post.id }}/">{{ blog_post.title }}</a>
+    {% endfor %}
+</div>
+
+    <!-- Blog Body Container -->
+    <div class="container blog-container">
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ form.text }}
+            <button class="btn btn-success">Write</button>
+        </form>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        {% for blog_post in posts %}
+                            <a href="/post/{{ blog_post.id }}/">{{ blog_post.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h3>Monthly Update</h3>
+                        <p>April 27, 2021 by <a href="#">Aaron Vito</a></p>
+                        <p>It's been a while since I last updated the Blog. At the time of writing this, I currently cleaned up the code for this website with the help of Mark of Kickstart Coding! Currently, the job hunt is currently hard but I was recently employed by a Covid Vaccination clinic. For a job for now, it has been fun but I will need to keep studying and networking if I am to succeed and be able to get a full time position. Thank you if you read this far! :)</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="/static/imgs/mvis_lidar.jpg" class="img-fluid img-thumbnail" />
+                    </div>
+                    <div class="col-6">
+                        <h3>Microvision (MVIS) Stock Update</h3>
+                        <p>March 18, 2021 by <a href="#">Aaron Vito</a></p>
+                        <p>Microvision, a company that focuses on LiDAR technology, has been making strides in the tech world, as well as for those who are interested in the stock market. This company and their products are pioneers with using lasers as a way for detection and to display interactive images. As a new shareholder of this company, I have learned that many companies would want to potentially buy the company. Some speculate this technology to be used for autonomous vehicles, so companies such as Ford, Tesla, and maybe even Apple, may purchase MVIS technology. Hopefully there will be positive news when their April annoucements arrives. <br>
+                        For more information, please check out <a href="http://www.microvision.com">Microvision</a> for more details. </p>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h3>I Joined KickStartCoding!</h3>
+                        <p>March 15, 2021 by <a href="#">Aaron Vito</a></p>
+                        <p>Hey everyone! This is my first post for my blog! I recently joined a coding bootcamp, called Kickstart Coding! This bootcamp is based in Oakland, CA and so far, I have been enjoying the course thus far. Even though I had prior experience with scripting languages and learning code from other websites, I have learned a lot of new things that I am able to apply towards the creation of this online resume/portfolio! I will be adding more things to the website to utilize more things that I learn in this journey! Hopefully I can keep this blog going!</p>
+                    </div>
+
+                </div>
+            </div>
+         </div>
+    </div>
+
+{% endblock content %}

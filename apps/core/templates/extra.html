@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container extra-header">
+  <h2>Extra</h2>
+  <h3>Aside from working on a computer all day, here are some fun hobbies of mine to show my creative side. Enjoy! (Due to some bugs, videos not uploaded to YouTube will ONLY play on Google Chrome. I apologize for the inconvenience)</h3>
+
+    <div class="card-deck extra-deck container-fluid">
+        <div class="row">
+          <!-- Modal Card 1 -->
+          <div class="card">
+            <img class="card-img-top card-image" src="/static/imgs/modal_image1.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Freestyle - Ne-Yo "Sexy Love Instrumental"</h5>
+              <p class="card-text">Did a short freestyle to a classic song. Thank you TwoCar Studio for providing a space for dancers to be safe during the COVID pandemic!</p>
+              <p class="card-text"><small class="text-muted">Last updated April 19, 2021</small></p>
+            </div>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal1">Watch Video</button>
+          </div>
+          <!-- Modal Card 5-->
+          <div class="card">
+            <img class="card-img-top" src="/static/imgs/modal_image5.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Choreography - Vae Stapes "Be Your Last"</h5>
+              <p class="card-text">In this project, I was asked to make choreography for a music video and teach it to my friends. This project couldn't have happened without @p.rxdriguez vision and his eye behind the camera! Unfortunately, the project was not able to be completed but the the choreography part was able to be filmed.</p>
+              <p class="card-text"><small class="text-muted">Last updated April 19, 2021</small></p>
+            </div>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal5">Watch Video</button>
+          </div>
+          <!-- Modal Card 2 -->
+          <div class="card">
+            <img class="card-img-top" src="/static/imgs/modal_image2.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Freestyle - madebyswavy (Crush Bootleg)</h5>
+              <p class="card-text">Summer feel-good freestyle recorded by the talented @p.rxdriguez. (Check out his IG to see his videography)</p>
+              <p class="card-text"><small class="text-muted">Last updated April 19, 2021</small></p>
+            </div>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal2">Watch Video</button>
+          </div>
+          <!-- Modal Card 3 -->
+          <div class="card">
+            <img class="card-img-top" src="/static/imgs/modal_image3.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Bridge Dance Competition 2019 - PAC Modern</h5>
+              <p class="card-text">Last major competition with a team. It was a great oppurtunity to grow and hone my dancing skills while networking with alumni and team members.</p>
+              <p class="card-text"><small class="text-muted">Last updated April 19, 2021</small></p>
+            </div>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal3">Watch on Youtube</button>
+          </div>
+          <!-- Modal Card 4 -->
+          <div class="card">
+            <img class="card-img-top" src="/static/imgs/modal_image4.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Choreography - Brockhmpton "Sugar"</h5>
+              <p class="card-text">PAC Modern Choreography nights allows individuals to showcase their creativity to the rest of the team, alumni, and guests!</p>
+              <p class="card-text"><small class="text-muted">Last updated April 19, 2021</small></p>
+            </div>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal4">Watch Video</button>
+          </div>
+
+          <!-- Modal Card 6 -->
+          <div class="card">
+            <img class="card-img-top" src="/static/imgs/modal_image6.PNG" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Karatong Subli - Long Beach's 33rd Pilipino Culture Night </h5>
+              <p class="card-text">One of the three dances that my co-coordinator and I taught and blocked to club members for the annual Pilipino American Coalition's (PAC) Cultural Night.</p>
+              <p class="card-text"><small class="text-muted">Last updated April 19, 2021</small></p>
+            </div>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal6">Watch Video</button>
+          </div>
+
+       </div>
+
+    </div>
+
+        <!-- Extra Modal 1 Video -->
+        <div class="modal fade" id="myModal1">
+            <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg">
+              <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <video class="extra-main-video video-modal" controls src="https://drive.google.com/file/d/1zXK6NiLAo5CFOnrw060CzBGaycJCU-0m/preview"></video>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Extra Modal 2 Video-->
+        <div class="modal fade" id="myModal2">
+            <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg">
+              <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <iframe class="video-modal" src="https://drive.google.com/file/d/1NZoyrixCM0MUKNFaOwPxbfWQDprKe0mp/preview" width="640" height="480"></iframe>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Extra Modal 3 Video-->
+        <div class="modal fade" id="myModal3">
+            <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg">
+              <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <iframe class="video-modal" width="560" height="315" src="https://www.youtube.com/embed/BgROK_gs4G0?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Extra Modal 4 Video-->
+        <div class="modal fade" id="myModal4">
+            <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg">
+              <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <iframe class="video-modal" src="https://drive.google.com/file/d/1ayl3GQwb2d0yguC-BpKfPFvX8pHV_z8T/preview" width="640" height="480"></iframe>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Extra Modal 5 Video-->
+        <div class="modal fade" id="myModal5">
+            <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg">
+              <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <iframe class="video-modal" src="https://drive.google.com/file/d/1PsUcAGonHNXMv7XopplWtfUNXMicn3-_/preview" width="640" height="480"></iframe>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Extra Modal 6 Video-->
+        <div class="modal fade" id="myModal6">
+            <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg">
+              <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <iframe class="video-modal" width="560" height="315" src="https://www.youtube.com/embed/trySvsvabWM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+        </div>
+
+</div>
+
+{% endblock content %}
+
