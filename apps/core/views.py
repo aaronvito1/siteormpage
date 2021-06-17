@@ -1,11 +1,17 @@
 import requests
 from django import forms
 from django.shortcuts import render
+from django.shortcuts import redirect
+from django.db import models
 from .models import Post
 
 # class PostBlog(forms.Form):
 class PostForm(forms.Form):
-    text = forms.CharField(widget=forms.Textarea)
+	first_name = forms.CharField(max_length=50)
+	last_name = forms.CharField(max_length=50)
+	title= forms.CharField()
+	body = forms.CharField(widget=forms.Textarea)
+	created= models.DateTimeField(auto_now_add=True)
 
 def index(request):
 	# content_html = open("apps/core/templates/index.html").read()
@@ -43,12 +49,27 @@ def extra(request):
 	return render(request, "extra.html", context)
 
 def blog(request):
-	# content_html = open("apps/core/templates/blog.html").read()
 	print('Blog page being visited')
+	# content_html = open("apps/core/templates/blog.html").read()
+	# CREATE POSTS
+	if request.method == "POST":
+		form = PostForm(request.POST)
+		if form.is_valid():
+			Post.objects.create(
+				title=form.cleaned_data['title'],
+				body=form.cleaned_data['body'],
+				first_name=form.cleaned_data['first_name'],
+				last_name=form.cleaned_data['last_name'],
+				)
+			return redirect('/')
+	else:
+		form=PostForm()
+
 	blog_posts = Post.objects.all()
 	context = {
 		# "content": content_html, 
-		"posts": blog_posts,
+		"all_posts": blog_posts,
+		"form": form,
 	}
 	return render(request, "blog.html", context)
 

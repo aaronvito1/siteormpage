@@ -6,36 +6,29 @@
  <!-- Header Start -->
     <div class="blog-header">
       <h2>Blog</h2>
-      <h3>I share my thoughts on technology here, with some posts being non-tech related!</h3>
+      <h3>Where I share my thoughts, tech or non-tech to the world. Feel free to share what's on your mind as well!</h3>
     </div>
     <!-- Header End -->
 
 
-<div class="container">
+<!-- <div class="blog-container">
 
-    {% for blog_post in posts %}
-        <a href="/post/{{ blog_post.id }}/">{{ blog_post.title }}</a>
-    {% endfor %}
-</div>
+</div> -->
 
     <!-- Blog Body Container -->
     <div class="container blog-container">
-        <form action="." method="POST">
+        <form method="POST">
             {% csrf_token %}
-            {{ form.text }}
-            <button class="btn btn-success">Write</button>
+            {{ form.as_p }}
+            <h3><button class="btn btn-success">Write Post</button></h3>
         </form>
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        {% for blog_post in posts %}
-                            <a href="/post/{{ blog_post.id }}/">{{ blog_post.title }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+        {% for blog_post in all_posts %}
+            <h3>{{ blog_post.title }}</h3>
+            <p>{{ blog_post.first_name }} {{ blog_post.last_name }}</p>
+            <p>{{ blog_post.body }}</p>
+        {% endfor %}
         <div class="row">
             <div class="col">
                 <div class="row">
